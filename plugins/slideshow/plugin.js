@@ -37,7 +37,7 @@ var SHOWS = [
 {query:"auto=8", title: "Automatic Slideshow", label: "Slideshow+"}
 ];
 
-var mime = "image/png;image/jpeg;image/gif;image/x-icon;image/x-ico;image/x-win-bitmap;image/svg+xml;image/svg;image/svg-xml;image/vnd.adobe.svg+xml;text/xml-svg;image/svg+xml-compressed";
+var mime = "image/avif;image/heif;image/png;image/jpeg;image/gif;image/x-icon;image/x-ico;image/x-win-bitmap;image/svg+xml;image/svg;image/svg-xml;image/vnd.adobe.svg+xml;text/xml-svg;image/svg+xml-compressed";
 var mime_raw = ";image/x-adobe-dng;image/x-canon-cr2;image/x-canon-crw;image/x-dcraw;image/x-fuji-raf;image/x-hdr;image/x-kde-raw;image/x-kodak-dcr;image/x-kodak-k25;image/x-kodak-kdc;" +
   "image/x-minolta-mrw;image/x-nikon-nef;image/x-olympus-orf;image/x-panasonic-raw;image/x-panasonic-raw2;image/x-pentax-pef;image/x-sigma-x3f;image/x-sony-arw;image/x-sony-sr2;image/x-sony-srf";
 
@@ -161,7 +161,7 @@ var Plugin = new Lang.Class ({
             dir.get_basename () + "</span></a>";
         html += "<div class=\"numbertext ctrl\">1 / " + files.length + "</div>";
         html += "<div class=\"toolbar ctrl\"><div class=\"toolbtn speedbtn\" onclick=\"toggle_speed()\">Speed</div><div class=\"speed-menu\"><a onclick=\"set_speed(0)\">Manual</a>";
-        [4,8,12,20,30,60].forEach (p=>{html += "<a onclick=\"set_speed("+p+")\">"+p+" seconds</a>";});
+        [2,3,4,8,12,20].forEach (p=>{html += "<a onclick=\"set_speed("+p+")\">"+p+" seconds</a>";});
         html += "</div><a href=\"" + files[0].name.toString() + "\" class=\"toolbtn dl\" title=\"Download Original\" download>⇩</a></div>";
         for (let i = 0; i < mid; i++) {
             html += "<div class=\"mySlides\"><img src=\"" + files[i].name.toString() + "?plug=" + this.puid +
